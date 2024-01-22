@@ -1,2 +1,5 @@
+application:
+  host: "localhost"
+  port: "8000"
 target:
   address: "192.168.1.24"

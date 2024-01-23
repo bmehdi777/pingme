@@ -1,3 +1,154 @@
-h1 {
-	color: red;
+html {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+	font-family: 'Inter', sans-serif;
+}
+body {
+  background-color: #1c1818;
+  color: white;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.zone_effect {
+  animation: fadeInAnimation ease 2s forwards;
+}
+
+#zone_effect1 {
+  background-color: #de2828;
+  position: fixed;
+  bottom: 0;
+  left: -10%;
+  width: 333px;
+  height: 333px;
+  border-radius: 100%;
+  filter: blur(185px);
+  z-index: -10;
+}
+#zone_effect2 {
+  background-color: #aa0f9ad1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 654px;
+  height: 654px;
+  border-radius: 100%;
+  filter: blur(400px);
+  z-index: -10;
+}
+#zone_effect3 {
+  background-color: #9b1233;
+  position: fixed;
+  top: -30%;
+  right: -20%;
+  width: 654px;
+  height: 654px;
+  border-radius: 100%;
+  filter: blur(220px);
+  z-index: -10;
+}
+
+/* header part */
+header {
+  display: flex;
+  width: 100vw;
+  margin-top: 4em;
+
+  justify-content: center;
+}
+#title {
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* body */
+.container_welcome {
+  width: 100%;
+  min-height: 71vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.greet {
+  font-weight: 600;
+  font-size: 4em;
+  position: relative;
+}
+.greet:after {
+  content: "";
+  background: url("assets/underline_welcome.svg");
+  height: 8px;
+  width: 242px;
+  margin: auto;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.4rem;
+  position: absolute;
+}
+p {
+  font-weight: 300;
+  font-size: 2em;
+  color: #dedede;
+  text-align: center;
+}
+.important {
+  font-weight: 600;
+  position: relative;
+}
+.important:after {
+  content: "";
+  background: url("assets/underline_name.svg");
+  position: absolute;
+  width: 114px;
+  height: 14px;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.3em;
+  z-index: -1;
+}
+.text_presentation {
+  margin: 0 20px;
+  margin-top: 30px;
+}
+
+/* footer part */
+footer {
+  font-size: 20px;
+  width: 100%;
+
+  position: absolute;
+  bottom: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 22px;
+}
+#block_picto {
+  display: flex;
+  gap: 35px;
+}
+
+/* media queries and animation  */
+/* everything except mobile */
+@media (min-width: 425px) {
+  .container_welcome {
+  }
+  .important:after {
+    bottom: -0.4em;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

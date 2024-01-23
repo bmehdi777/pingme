@@ -8,6 +8,7 @@ use tera::Context;
 #[tracing::instrument]
 pub async fn ping(State(app_state): State<AppStateRC>) -> Result<Html<String>, StatusCode> {
     let mut context = Context::new();
+    context.insert("name", &app_state.settings.target.name);
 
     let success: bool;
     match ping_destination(app_state.settings.target.address.clone()) {

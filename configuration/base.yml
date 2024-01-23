@@ -3,4 +3,4 @@ application:
   port: 8000
 target:
   address: "127.0.0.1"
-  name: ""
+  title: ""

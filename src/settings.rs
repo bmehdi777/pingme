@@ -13,7 +13,7 @@ pub struct ApplicationSettings {
 #[derive(serde::Deserialize, Debug, Clone)]
 pub struct TargetSettings {
     pub address: String,
-    pub name: String,
+    pub title: String,
 }
 
 enum Environment {

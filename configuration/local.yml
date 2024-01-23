@@ -3,4 +3,4 @@ application:
   port: "8000"
 target:
   address: "8.8.8.8"
-  name: "Google"
+  title: "Is Google's internet back ?"

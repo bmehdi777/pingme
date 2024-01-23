@@ -8,11 +8,13 @@ use tower_http::services::ServeDir;
 #[derive(Debug)]
 pub struct AppState {
     pub tera: Tera,
+    pub settings: Settings,
 }
 impl AppState {
-    pub async fn new() -> anyhow::Result<Self> {
+    pub async fn new(configuration: Settings) -> anyhow::Result<Self> {
         Ok(AppState {
-            tera: Tera::new("src/templates/**/*.html")?
+            tera: Tera::new("src/templates/**/*.html")?,
+            settings: configuration
         })
     }
 }
@@ -26,7 +28,7 @@ pub async fn run(configuration: Settings) -> anyhow::Result<()> {
         &configuration.application.port
     );
 
-    let app_state = AppStateRC::new(AppState::new().await?);
+    let app_state = AppStateRC::new(AppState::new(configuration.clone()).await?);
 
     let app = Router::new()
         .route("/healthcheck", get(healthcheck::healtcheck))

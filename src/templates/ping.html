@@ -7,7 +7,10 @@
 		<link href="assets/style.css" rel="stylesheet">
 	</head>
 	<body>
-		{% include "has_internet.html" %}
-	
+		{% if ping_success %}
+			{% include "has_internet.html" %}
+		{% else %}
+			{% include "has_not_internet.html" %}
+		{% endif %}
 	</body>
 </html>

@@ -14,10 +14,20 @@
     <div class="zone_effect" id="zone_effect2"></div>
     <div class="zone_effect" id="zone_effect3"></div>
 
-		{% if ping_success %}
-			{% include "has_internet.html" %}
-		{% else %}
-			{% include "has_not_internet.html" %}
-		{% endif %}
+		<main>
+			{% if ping_success %}
+				{% include "has_internet.html" %}
+			{% else %}
+				{% include "has_not_internet.html" %}
+			{% endif %}
+		</main>
+		<footer>
+			<div id="copyright">&copy; <span id="copyright_year"></span></div>
+		</footer>
+
+		<script>
+			document.querySelector("#copyright_year").innerHTML =
+				new Date().getFullYear();
+		</script>
 	</body>
 </html>

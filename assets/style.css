@@ -80,9 +80,10 @@ header {
 }
 .greet:after {
   content: "";
-  background: url("assets/underline_welcome.svg");
+  background: url("/assets/underline_welcome.svg");
+	background-size: cover;
   height: 8px;
-  width: 242px;
+  width: auto;
   margin: auto;
   left: -0.5rem;
   right: -0.5rem;
@@ -94,21 +95,6 @@ p {
   font-size: 2em;
   color: #dedede;
   text-align: center;
-}
-.important {
-  font-weight: 600;
-  position: relative;
-}
-.important:after {
-  content: "";
-  background: url("assets/underline_name.svg");
-  position: absolute;
-  width: 114px;
-  height: 14px;
-  left: -0.5rem;
-  right: -0.5rem;
-  bottom: -0.3em;
-  z-index: -1;
 }
 .text_presentation {
   margin: 0 20px;

@@ -1,5 +1,4 @@
-use std::{sync::Arc, time::Duration};
-
+use std::time::Duration;
 use crate::startup::AppStateRC;
 use axum::{extract::State, http::StatusCode, response::Html};
 use ping_rs::{send_ping, PingOptions};

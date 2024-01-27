@@ -50,6 +50,19 @@ body {
   z-index: -10;
 }
 
+.reload_button {
+	background: none;
+	border: none;
+	width: "100%";
+}
+.reload_button svg {
+	color: #dedede;
+}
+.reload_button svg:hover {
+	animation: rotate ease 0.5s forwards;
+	cursor: pointer;
+}
+
 /* header part */
 header {
   display: flex;
@@ -65,7 +78,7 @@ header {
 }
 
 /* body */
-.container_welcome {
+.container {
   width: 100%;
   min-height: 71vh;
   display: flex;
@@ -73,12 +86,12 @@ header {
   align-items: center;
   justify-content: center;
 }
-.greet {
+.underline {
   font-weight: 600;
   font-size: 4em;
   position: relative;
 }
-.greet:after {
+.underline:after {
   content: "";
   background: url("/assets/underline_welcome.svg");
 	background-size: cover;
@@ -123,7 +136,7 @@ footer {
 /* media queries and animation  */
 /* everything except mobile */
 @media (min-width: 425px) {
-  .container_welcome {
+  .container {
   }
   .important:after {
     bottom: -0.4em;
@@ -137,4 +150,13 @@ footer {
   100% {
     opacity: 1;
   }
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

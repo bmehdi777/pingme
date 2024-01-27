@@ -7,6 +7,14 @@
 		<meta http-equip="Cache-Control" content="no-cache, no-store, must-revalidate"/>
 		<meta http-equip="Pragma" content="no-cache"/>
 		<meta http-equip="Expires" content="0"/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+
 		<link href="assets/style.css" rel="stylesheet">
 	</head>
 	<body>
@@ -15,11 +23,13 @@
     <div class="zone_effect" id="zone_effect3"></div>
 
 		<main>
+			<div class="container">
 			{% if ping_success %}
 				{% include "has_internet.html" %}
 			{% else %}
 				{% include "has_not_internet.html" %}
 			{% endif %}
+			</div>
 		</main>
 		<footer>
 			<div id="copyright">&copy; <span id="copyright_year"></span></div>

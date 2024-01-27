@@ -33,6 +33,7 @@ pub async fn run(configuration: Settings) -> anyhow::Result<()> {
     let app = Router::new()
         .route("/healthcheck", get(healthcheck::healtcheck))
         .route("/", get(ping::ping))
+        .route("/api/ping", get(ping::api_ping))
         .with_state(app_state.clone())
         .nest_service("/assets", ServeDir::new("assets"));
 

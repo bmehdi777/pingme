@@ -26,6 +26,13 @@ pub async fn ping(State(app_state): State<AppStateRC>) -> Result<Html<String>, S
     }
 }
 
+pub async fn api_ping(State(app_state): State<AppStateRC>) -> StatusCode {
+    match ping_destination(app_state.settings.target.address.clone()) {
+        Ok(_)=> StatusCode::OK,
+        Err(_)=> StatusCode::SERVICE_UNAVAILABLE,
+    }
+}
+
 #[tracing::instrument]
 fn ping_destination(dest: String) -> Result<String, String> {
     let data = [1, 2, 3, 4];

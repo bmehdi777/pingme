@@ -1,10 +1,10 @@
-FROM rust:1.75.0 as builder
+FROM rust:1.84.1 as builder
 WORKDIR app
 COPY . . 
 RUN ls configuration
 RUN cargo build --release --bin ping
 
-FROM rust:1.75.0 as runtime
+FROM rust:1.84.1 as runtime
 WORKDIR app
 COPY --from=builder /app/target/release/ping ./
 COPY --from=builder /app/assets ./assets/

@@ -1,7 +1,7 @@
-use std::time::Duration;
 use crate::startup::AppStateRC;
 use axum::{extract::State, http::StatusCode, response::Html};
 use ping_rs::{send_ping, PingOptions};
+use std::time::Duration;
 use tera::Context;
 
 #[tracing::instrument]
@@ -25,10 +25,10 @@ pub async fn ping(State(app_state): State<AppStateRC>) -> Result<Html<String>, S
     }
 }
 
-pub async fn api_ping(State(app_state): State<AppStateRC>) -> StatusCode {
+pub async fn api_ping(State(app_state): State<AppStateRC>) -> &'static str {
     match ping_destination(app_state.settings.target.address.clone()) {
-        Ok(_)=> StatusCode::OK,
-        Err(_)=> StatusCode::SERVICE_UNAVAILABLE,
+        Ok(_) => "OK\n",
+        Err(_) => "KO\n",
     }
 }
 
